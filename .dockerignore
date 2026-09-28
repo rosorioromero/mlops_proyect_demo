@@ -1,0 +1,30 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Data — not needed in container
+data/
+
+# MLflow
+mlruns/
+mlflow.db
+
+# Git and DVC
+.git/
+.dvc/
+.gitignore
+.dvcignore
+*.dvc
+
+# Misc
+.DS_Store
+.env
+.venv/
+venv/
+artifacts/
+src/
+.vscode/
+
+HR-Employee-Attrition.csv.dvc
+README.md

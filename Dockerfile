@@ -1,0 +1,27 @@
+# FROM python:3.11-slim
+
+# WORKDIR /app
+
+# # Install dependencies
+# COPY requirements.txt .
+# RUN pip install --no-cache-dir -r requirements.txt
+
+# # Copy the application code
+# COPY app/ ./app/
+# COPY models/ ./models/
+
+# # Expose the port the app runs on
+# EXPOSE 8001
+
+# CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001"]
+
+FROM python:3.11-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --default-timeout=1000 --retries=10 --no-cache-dir -r requirements.txt
+COPY app/ ./app/
+COPY models/ ./models/
+COPY serve.sh .
+RUN chmod +x serve.sh
+EXPOSE 8080
+ENTRYPOINT ["./serve.sh"]
