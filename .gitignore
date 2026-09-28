@@ -217,3 +217,15 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 /data.csv
+
+# MLflow & Data Science
+mlflow.db
+mlruns/
+artifacts/
+data/
+models/
+*.csv
+*.pkl
+*.skops
+*.png
+*.tar.gz
